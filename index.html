@@ -93,14 +93,19 @@
 
     /* Regras CSS para a página de login */
     #login-page {
-        display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      position: fixed;
-      width: 100%;
-      background: white;
-      z-index: 9999;
+      display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+        /* Adiciona a imagem de fundo */
+        background: url(https://media.tenor.com/wngVe_Erkh8AAAAC/blue-white.gif') 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        z-index: 9999;
     }
 
     #login-page form {
@@ -158,12 +163,12 @@ header {
 
 </head>
 <body>
-    <div id="login-page">
-        <form onsubmit="checkPassword(event)">
-          <input type="password" id="password" placeholder="Digite a senha">
-          <button type="submit">Entrar</button>
-        </form>
-      </div>
+  <div id="login-page">
+    <form onsubmit="checkPassword(event)">
+      <input type="password" id="password" placeholder="Digite a senha">
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
   <header>
     <nav class="menu">
         <a href="mailto:ravell.lopes@gmail.com">Contato</a>
