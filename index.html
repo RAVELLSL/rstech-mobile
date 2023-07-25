@@ -100,12 +100,16 @@
         position: fixed;
         width: 100%;
         /* Adiciona a imagem de fundo */
-        background: url(https://media.tenor.com/wngVe_Erkh8AAAAC/blue-white.gif') 
+        background: url('https://media.tenor.com/wngVe_Erkh8AAAAC/blue-white.gif') no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         z-index: 9999;
+    }
+
+    #site-content {
+        display: none;
     }
 
     #login-page form {
@@ -150,31 +154,35 @@ header {
   </style>
 
 <script>
-    function checkPassword(event) {
-      event.preventDefault();
-      var password = document.getElementById('password').value;
-      if (password === "aluno") {
-        document.getElementById('login-page').style.display = 'none';
-      } else {
-        alert("Senha incorreta! Por favor, tente novamente.");
-      }
+  function checkPassword(event) {
+    event.preventDefault();
+    var password = document.getElementById('password').value;
+    if (password === "aluno") {
+      document.getElementById('login-page').style.display = 'none';
+      /* Exibe o conteúdo do site após o login bem sucedido */
+      document.getElementById('site-content').style.display = 'block';
+    } else {
+      alert("Senha incorreta! Por favor, tente novamente.");
     }
-  </script>
+  }
+</script>
 
 </head>
 <body>
-  <div id="login-page">
-    <form onsubmit="checkPassword(event)">
-      <input type="password" id="password" placeholder="Digite a senha">
-      <button type="submit">Entrar</button>
-    </form>
-  </div>
+  <body>
+    <div id="login-page">
+        <form onsubmit="checkPassword(event)">
+          <input type="password" id="password" placeholder="Digite a senha">
+          <button type="submit">Entrar</button>
+        </form>
+    </div>
   <header>
     <nav class="menu">
         <a href="mailto:ravell.lopes@gmail.com">Contato</a>
       </nav>
   </header>
   <main>
+    <div id="site-content">
     <section class="important">
       <div class="title">
         <h1>Importante!</h1>
@@ -218,7 +226,8 @@ header {
   </main>
   <div style="height: 100px;"></div> <!-- Espaço adicional antes do rodapé -->
   <footer>
-    &copy; 2023 Artigos Tecnológicos. Todos os direitos reservados.
+    &copy; 2023 Todos os direitos reservados.
   </footer>
+</div>
 </body>
 </html>
