@@ -112,6 +112,11 @@
         display: none;
     }
 
+     /* Centraliza o cabeçalho na página de login */
+     #login-page h1 {
+      text-align: center;
+    }
+
     #login-page form {
       border: 1px solid #ccc;
       padding: 20px;
@@ -156,24 +161,25 @@ header {
   </style>
 
 <script>
-  function checkPassword(event) {
-    event.preventDefault();
-    var password = document.getElementById('password').value;
-    if (password === "aluno") {
-      document.getElementById('login-page').style.display = 'none';
-      /* Exibe o conteúdo do site após o login bem sucedido */
-      document.getElementById('site-content').style.display = 'block';
-    } else {
-      alert("Senha incorreta! Por favor, tente novamente.");
+    function checkPassword(event) {
+      event.preventDefault();
+      var password = document.getElementById('password').value;
+      if (password === "aluno") {
+        document.getElementById('login-page').style.display = 'none';
+        /* Exibe o conteúdo do site após o login bem sucedido */
+        document.getElementById('site-content').style.display = 'block';
+      } else {
+        alert("Senha incorreta! Por favor, tente novamente.");
+      }
     }
-  }
-</script>
+  </script>
 
 </head>
 <body>
   <body>
     <div id="login-page">
         <form onsubmit="checkPassword(event)">
+          <h1>Área de Login</h1>
           <input type="password" id="password" placeholder="Digite a senha">
           <button type="submit">Entrar</button>
         </form>
@@ -201,7 +207,7 @@ header {
           <iframe src="https://www.youtube.com/embed/nE_zy8zHOCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h2>Perigos Reais da Inteligência Artificial</h2>
-        <p>A inteligência artificial, apesar de seu potencial revolucionário, apresenta desafios significativos, exigindo regulamentações cuidadosas e conscientização da sociedade.</p>
+        <p>A inteligência artificial, apesar de seu potencial revolucionário, apresenta desafios significativos, como a possibilidade de viés nos algoritmos e o risco de substituição de empregos por máquinas, exigindo regulamentações cuidadosas e conscientização da sociedade.</p>
       </article>
       <article class="article">
         <div class="video">
