@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artigos Tecnológicos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+    header {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      top: 0;
+    }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    main {
+      margin-top: 60px;
+      padding: 20px;
+    }
+    .important {
+      text-align: center;
+      margin-bottom: 70px;  /* Aumente este valor para criar mais espaço */
+    }
+    .important img {
+      width: 90%;
+      transform: rotate(5.5deg);
+      height: auto;
+      margin: 0 auto;
+    }
+    .important .title {
+      text-align: center;
+    }
+    .important .message {
+      text-align: center;
+    }
+    .article {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #artigos h1 {
+      text-align: center;
+    }
+
+    .article h2 {
+      text-align: center;
+      margin: 0 0 10px 0;
+    }
+    .article p {
+      margin: 0 0 10px 0;
+    }
+    .video {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Regras CSS para a página de login */
+    #login-page {
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      width: 100%;
+      background: white;
+      z-index: 9999;
+    }
+
+    #login-page form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #login-page input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    #login-page button {
+      padding: 10px;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+/* Regras CSS para a barra de menu fixa */
+header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    @media (min-width: 600px) {
+      .article {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 20px;
+      }
+    }
+  </style>
+
+<script>
+    function checkPassword(event) {
+      event.preventDefault();
+      var password = document.getElementById('password').value;
+      if (password === "aluno") {
+        document.getElementById('login-page').style.display = 'none';
+      } else {
+        alert("Senha incorreta! Por favor, tente novamente.");
+      }
+    }
+  </script>
+
+</head>
+<body>
+    <div id="login-page">
+        <form onsubmit="checkPassword(event)">
+          <input type="password" id="password" placeholder="Digite a senha">
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+  <header>
+    <nav class="menu">
+        <a href="mailto:ravell.lopes@gmail.com">Contato</a>
+      </nav>
+  </header>
+  <main>
+    <section class="important">
+      <div class="title">
+        <h1>Importante!</h1>
+      </div>
+      <img src="https://scontent.frec15-1.fna.fbcdn.net/v/t39.30808-6/355136240_114092818386385_8666226385074923351_n.jpg?_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFpvHfERuAeKSu954vACnKdWQCS7XeqyGVZAJLtd6rIZRCEUjY4Di_CbWsf_8VRNJEnk_5k93e4TdJ0aPgWncBl&_nc_ohc=CHanMpxC6GQAX_z3UJ_&_nc_ht=scontent.frec15-1.fna&oh=00_AfDOltNYzNP73iMlpnX2EQN_L3kVv6PZkUxiVT4i6wkWrw&oe=64C3C4FF" alt="professor">
+      <div class="message">
+        <p>Nesse espaço você encontra informações complementares dos assuntos abordados em aula.</p>
+      </div>
+    </section>
+    <section id="artigos">      
+      <h1>Artigos</h1>
+      <article class="article">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/wQizTcj1hew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>Empatia Artificial</h2>
+        <p>A empatia artificial compreende as emoções humanas, permitindo sistemas computacionais interagirem conosco de maneira inédita.</p>
+      </article>
+      <article class="article">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/rQizFGMqdY4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>Quinta Revolução Industrial</h2>
+        <p>A quinta revolução industrial e as convergências de tecnologias disruptivas que estão transformando a economia global.</p>
+      </article>
+      <article class="article">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/3E0VhkoJnd4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>Correntes Filosóficas da Tecnologia</h2>
+        <p>As correntes filosóficas da tecnologia abrangem diferentes perspectivas sobre o impacto e o papel da tecnologia na sociedade.</p>
+      </article>
+    </section>
+  </main>
+  <div style="height: 100px;"></div> <!-- Espaço adicional antes do rodapé -->
+  <footer>
+    &copy; 2023 Artigos Tecnológicos. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
