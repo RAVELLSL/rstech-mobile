@@ -2,17 +2,19 @@
 <html>
 <head>
   <<title>Artigos Tecnológicos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=0.85"> <!-- Modificado aqui -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.95"> <!-- Modificado aqui -->
   <meta charset="UTF-8">
   
   <!-- CSS Styles -->
   <style>
-    /* Estilos para o corpo da página */
-    body {
+    html, body {
       font-family: Arial, sans-serif;
+      height: 100%;
+      width: 100%;
       margin: 0;
       padding: 0;
       background-color: #ffffff;
+      overflow-x: hidden; /* Previne o deslocamento horizontal */
     }
 
     /* Estilos para o cabeçalho */
@@ -38,11 +40,12 @@
       color: #fff;
       text-decoration: none;
       padding: 10px;
-      margin-right: 60px; /* Adicionado aqui */
+      margin-right: 60px;
     }
 
     /* Estilos para o conteúdo principal */
     main {
+      display: none; /* Esconde o conteúdo principal no carregamento da página */
       margin-top: 60px;
       padding: 20px;      
     }
@@ -94,11 +97,15 @@
 
     /* Estilos para a página de login */
     #login-page {
+      position: absolute; /* Alterado de relative para absolute */
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       display: flex;
       justify-content: center;
-      align-items: center; /* Centraliza verticalmente */
+      align-items: center;
       height: 100vh;
-      position: relative;
       width: 100%;
       background: url('https://media.tenor.com/wngVe_Erkh8AAAAC/blue-white.gif') no-repeat center center fixed; 
       -webkit-background-size: cover;
