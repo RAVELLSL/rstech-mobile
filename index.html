@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Artigos Tecnológicos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <<title>Artigos Tecnológicos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.95"> <!-- Modificado aqui -->
   <meta charset="UTF-8">
+  
+  <!-- CSS Styles -->
   <style>
+    /* Estilos para o corpo da página */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #ffffff;
     }
+
+    /* Estilos para o cabeçalho */
     header {
       width: 100%;
       padding: 10px;
@@ -18,24 +23,32 @@
       color: #fff;
       position: fixed;
       top: 0;
+      z-index: 1000;
+      background: linear-gradient(to right, #0072ff, #00c6ff, #ffffff);
     }
+
+    /* Estilos para o menu */
     .menu {
       display: flex;
-      flex-direction: row;
       justify-content: center;
+      align-items: center;
+      height: 100%;
     }
     .menu a {
       color: #fff;
       text-decoration: none;
       padding: 10px;
+      margin-right: 60px; /* Adicionado aqui */
     }
+
+    /* Estilos para o conteúdo principal */
     main {
       margin-top: 60px;
-      padding: 20px;
+      padding: 20px;      
     }
     .important {
       text-align: center;
-      margin-bottom: 70px;  /* Aumente este valor para criar mais espaço */
+      margin-bottom: 70px;
     }
     .important img {
       width: 90%;
@@ -43,12 +56,11 @@
       height: auto;
       margin: 0 auto;
     }
-    .important .title {
+    .important .title, .important .message {
       text-align: center;
     }
-    .important .message {
-      text-align: center;
-    }
+
+    /* Estilos para os artigos */
     .article {
       border: 1px solid #ccc;
       border-radius: 10px;
@@ -56,11 +68,9 @@
       padding: 20px;
       text-align: center;
     }
-
     #artigos h1 {
       text-align: center;
     }
-
     .article h2 {
       text-align: center;
       margin: 0 0 10px 0;
@@ -81,51 +91,47 @@
       width: 100%;
       height: 100%;
     }
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
 
-    /* Regras CSS para a página de login */
+    /* Estilos para a página de login */
     #login-page {
       display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        position: fixed;
-        width: 100%;
-        /* Adiciona a imagem de fundo */
-        background: url('https://media.tenor.com/wngVe_Erkh8AAAAC/blue-white.gif') no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        z-index: 9999;
+      justify-content: center;
+      align-items: center; /* Centraliza verticalmente */
+      height: 100vh;
+      position: relative;
+      width: 100%;
+      background: url('https://media.tenor.com/wngVe_Erkh8AAAAC/blue-white.gif') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      z-index: 9999;
     }
-
-    #site-content {
-        display: none;
+    #login-page .show-password {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
     }
-
-     /* Centraliza o cabeçalho na página de login */
-     #login-page h1 {
+    #login-page input::placeholder {
       text-align: center;
     }
-
+    #login-page .show-password label {
+      margin: auto;
+    }
+    #login-page h1 {
+      text-align: center;
+    }
     #login-page form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       border: 1px solid #ccc;
       padding: 20px;
       width: 300px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      /* Adiciona bordas arredondadas ao formulário */
       border-radius: 10px;
     }
-
     #login-page input {
       display: block;
       width: 100%;
@@ -133,7 +139,6 @@
       padding: 10px;
       box-sizing: border-box;
     }
-
     #login-page button {
       padding: 10px;
       width: 100%;
@@ -142,15 +147,22 @@
       border: none;
       cursor: pointer;
     }
-
-/* Regras CSS para a barra de menu fixa */
-header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
+    #login-page .show-password input[type="checkbox"] {
+      margin-right: 2px;
     }
 
+    /* Estilos para o rodapé */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Estilos para telas maiores */
     @media (min-width: 600px) {
       .article {
         display: grid;
@@ -159,45 +171,38 @@ header {
       }
     }
   </style>
-
-<script>
-    function checkPassword(event) {
-      event.preventDefault();
-      var password = document.getElementById('password').value;
-      if (password === "aluno") {
-        document.getElementById('login-page').style.display = 'none';
-        /* Exibe o conteúdo do site após o login bem sucedido */
-        document.getElementById('site-content').style.display = 'block';
-      } else {
-        alert("Senha incorreta! Por favor, tente novamente.");
-      }
-    }
-  </script>
-
 </head>
 <body>
-  <body>
-    <div id="login-page">
-        <form onsubmit="checkPassword(event)">
-          <h1>Área de Login</h1>
-          <input type="password" id="password" placeholder="Digite a senha">
-          <button type="submit">Entrar</button>
-        </form>
-    </div>
+  <div id="login-page">
+    <form onsubmit="checkPassword(event)">
+      <h1>Área de Login</h1>
+      <input type="password" id="password" placeholder="Digite a senha">
+      <div class="show-password">
+        <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+        <label for="show-password">Visualizar senha</label>
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
   <header>
     <nav class="menu">
-        <a href="mailto:ravell.lopes@gmail.com">Contato</a>
-      </nav>
+      <a href="mailto:ravell.lopes@gmail.com">Contato</a>
+    </nav>
   </header>
-  <main>
-    <div id="site-content">
+
+  <!-- Conteúdo principal -->
+  <main id="site-content">
     <section class="important">
       <div class="title">
-        <h1>Importante!</h1>
-      </div>
+        <h1>Informações!</h1> <!-- Cabeçalho da seção -->
+      </div>    
       <img src="https://scontent.frec15-1.fna.fbcdn.net/v/t39.30808-6/355136240_114092818386385_8666226385074923351_n.jpg?_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFpvHfERuAeKSu954vACnKdWQCS7XeqyGVZAJLtd6rIZRCEUjY4Di_CbWsf_8VRNJEnk_5k93e4TdJ0aPgWncBl&_nc_ohc=CHanMpxC6GQAX_z3UJ_&_nc_ht=scontent.frec15-1.fna&oh=00_AfDOltNYzNP73iMlpnX2EQN_L3kVv6PZkUxiVT4i6wkWrw&oe=64C3C4FF" alt="professor">
       <div class="message">
+        <br>
         <p>Nesse espaço você encontra informações complementares dos assuntos abordados em aula.</p>
+        <p>Temáticas que estão sendo apresentadas estarão disponíveis em breve.</p>
+        <p>Materiais antigos estão sendo adaptados para integrar este repositório.</p>
       </div>
     </section>
     <section id="artigos">      
@@ -232,10 +237,33 @@ header {
       </article>
     </section>
   </main>
-  <div style="height: 100px;"></div> <!-- Espaço adicional antes do rodapé -->
   <footer>
     &copy; 2023 Todos os direitos reservados.
   </footer>
-</div>
+
+  <!-- JavaScript Functions -->
+  <script>
+    function checkPassword(event) {
+      event.preventDefault();
+      var password = document.getElementById('password').value;
+      if (password === "aluno") {
+        document.getElementById('login-page').style.display = 'none';
+        document.getElementById('site-content').style.display = 'block';
+      } else {
+        alert("Senha incorreta! Por favor, tente novamente.");
+      }
+    }
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      var passwordType = passwordInput.getAttribute('type');
+
+      if (passwordType === 'password') {
+        passwordInput.setAttribute('type', 'text');
+      } else {
+        passwordInput.setAttribute('type', 'password');
+      }
+    }
+  </script>
 </body>
 </html>
